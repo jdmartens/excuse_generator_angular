@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExcuseService } from '../excuse.service';
+import { ExcuseApiService } from '../excuse-api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { ExcuseService } from '../excuse.service';
 export class HomeComponent {
   excuse: string = '';
 
-  constructor(private excuseService: ExcuseService) { }
+  constructor(private excuseService: ExcuseApiService) { }
 
   getExcuse(type: string) {
     switch (type) {

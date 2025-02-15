@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExcuseApiService {
-  private apiUrl = 'http://localhost:800/';
+  private apiUrl = 'http://localhost:8000';
   
   constructor(private http: HttpClient) { }
 

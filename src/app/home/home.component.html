@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="container mx-auto p-4">
+  <h1 class="text-3xl font-bold mb-4">Excuse Generator</h1>
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <button (click)="getExcuse('work')" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Work Excuse
+    </button>
+    <button (click)="getExcuse('late')" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      Late Excuse
+    </button>
+    <button (click)="getExcuse('help')" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+      Help Excuse
+    </button>
+    <button (click)="getExcuse('busy')" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+      Busy Excuse
+    </button>
+  </div>
+  <div *ngIf="excuse" class="bg-gray-100 p-4 rounded">
+    <p class="text-lg">{{ excuse }}</p>
+  </div>
+</div>
+

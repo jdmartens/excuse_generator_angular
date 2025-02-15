@@ -14,8 +14,10 @@
       Busy Excuse
     </button>
   </div>
-  <div *ngIf="excuse" class="bg-gray-100 p-4 rounded">
-    <p class="text-lg">{{ excuse }}</p>
-  </div>
+  @if (excuse) {
+    <div class="bg-gray-100 p-4 rounded">
+      <p class="text-lg">{{ excuse }}</p>
+    </div>
+  }
 </div>
 

@@ -1,30 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: excuse-generator-deployment
+  name: excuse-generator-ng-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: excuse-generator
+      app: excuse-generator-ng
   template:
     metadata:
       labels:
-        app: excuse-generator
+        app: excuse-generator-ng
     spec:
       containers:
-      - name: excuse-generator
-        image: excuse-generator:latest
+      - name: excuse-generator-ng
+        image: excuse_generator_ng:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: excuse-generator-service
+  name: excuse-generator-ng-service
 spec:
   selector:
-    app: excuse-generator
+    app: excuse-generator-ng
   ports:
     - protocol: TCP
       port: 80

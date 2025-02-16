@@ -10,19 +10,7 @@ export class ExcuseApiService {
   
   constructor(private http: HttpClient) { }
 
-  getWorkExcuse(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl}/work-excuse`);
-  }
-
-  getLateExcuse(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl}/late-excuse`);
-  }
-
-  getHelpExcuse(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl}/help-excuse`);
-  }
-
-  getBusyExcuse(): Observable<string> {
-    return this.http.get<string>(`${this.apiUrl}/busy-excuse`);
+  getExcuse(type: 'work' | 'late' | 'help' | 'busy'): Observable<any> {
+    return this.http.get<string>(`${this.apiUrl}/${type}-excuse`);
   }
 }

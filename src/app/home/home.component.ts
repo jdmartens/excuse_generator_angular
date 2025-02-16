@@ -11,20 +11,9 @@ export class HomeComponent {
 
   constructor(private excuseService: ExcuseApiService) { }
 
-  getExcuse(type: string) {
-    switch (type) {
-      case 'work':
-        this.excuseService.getWorkExcuse().subscribe(excuse => this.excuse = excuse);
-        break;
-      case 'late':
-        this.excuseService.getLateExcuse().subscribe(excuse => this.excuse = excuse);
-        break;
-      case 'help':
-        this.excuseService.getHelpExcuse().subscribe(excuse => this.excuse = excuse);
-        break;
-      case 'busy':
-        this.excuseService.getBusyExcuse().subscribe(excuse => this.excuse = excuse);
-        break;
-    }
+  getExcuse(type: 'work' | 'late' | 'help' | 'busy') {
+    this.excuseService.getExcuse(type).subscribe(excuse => {
+      this.excuse = excuse['excuse']
+    });
   }
 }

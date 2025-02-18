@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
 import { ExcuseApiService } from '../excuse-api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  imports: [MatSnackBarModule]
 })
 export class HomeComponent {
   excuse: string = '';
@@ -15,7 +16,7 @@ export class HomeComponent {
 
   getExcuse(type: 'work' | 'late' | 'help' | 'busy') {
     this.loading = true;
-    let snackBarRef;
+    let snackBarRef: MatSnackBarRef<any> | undefined;
     const snackBarTimeout = setTimeout(() => {
       snackBarRef = this.snackBar.open('The first request may take up to 45 seconds because it is hosted with minimal resources.', 'Close', {
         duration: 30000, // 30 seconds

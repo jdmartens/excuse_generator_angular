@@ -1,0 +1,6 @@
+.spinner-border {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: currentColor;
+  border-left-color: currentColor;
+}

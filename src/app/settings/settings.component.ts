@@ -1,9 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
-  imports: [CommonModule],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })

@@ -1,8 +1,9 @@
+<!-- filepath: /Users/jeremymartens/sourcecode/excuse_generator_angular/src/app/settings/settings.component.html -->
 <div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold mb-4 text-center" [ngClass]="{'text-white': isDarkMode, 'text-black': !isDarkMode}">Settings</h1>
+  <h1 class="text-3xl font-bold mb-4 text-center">Settings</h1>
   <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
     <div class="flex items-center justify-between">
-      <span class="text-lg" [ngClass]="{'text-white': isDarkMode, 'text-black': !isDarkMode}">Dark Mode</span>
+      <span class="text-lg text-black dark:text-white">Dark Mode</span>
       <label class="switch">
         <input type="checkbox" (change)="toggleDarkMode($event)" [checked]="isDarkMode">
         <span class="slider round"></span>

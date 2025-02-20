@@ -16,13 +16,13 @@
   </div>
   @if (loading) {
     <div class="flex justify-center items-center">
-      <div class="w-8 h-8 border-b-4 border-gray-900 rounded-full animate-spin"></div>
+      <div class="w-8 h-8 border-b-4 border-gray-900 dark:border-gray-100 rounded-full animate-spin"></div>
     </div>
     
   }
   @if (excuse) {
-    <div class="bg-gray-100 p-4 rounded">
-      <p class="text-lg">{{ excuse }}</p>
+    <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded">
+      <p class="text-lg text-black dark:text-white">{{ excuse }}</p>
     </div>
   }
 </div>

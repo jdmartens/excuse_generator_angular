@@ -13,14 +13,14 @@ export class AppComponent implements OnInit {
   menuOpen = false;
 
   ngOnInit() {
-    let isDarkMode = false;
-    const darkModeSetting = localStorage.getItem('darkMode');
+    // let isDarkMode = false;
+    let darkModeSetting = localStorage.getItem('darkMode');
     // default to dark mode
     if (darkModeSetting === null) {
       localStorage.setItem('darkMode', 'true');
-      isDarkMode = true;
+      darkModeSetting = 'true';
     }
-    if (isDarkMode) {
+    if (darkModeSetting === 'true') {
       document.documentElement.classList.add('dark');
     }
   }

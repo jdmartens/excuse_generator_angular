@@ -15,6 +15,10 @@ export class HomeComponent {
   constructor(private excuseService: ExcuseApiService, private snackBar: MatSnackBar) { }
 
   getExcuse(type: 'work' | 'late' | 'help' | 'busy') {
+    if (this.loading) {
+      return; // Prevent multiple requests
+    }
+    this.excuse = '';
     this.loading = true;
     let snackBarRef: MatSnackBarRef<any> | undefined;
     const snackBarTimeout = setTimeout(() => {

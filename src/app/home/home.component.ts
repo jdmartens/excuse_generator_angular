@@ -14,7 +14,7 @@ export class HomeComponent {
 
   constructor(private excuseService: ExcuseApiService, private snackBar: MatSnackBar) { }
 
-  getExcuse(type: 'work' | 'late' | 'help' | 'busy') {
+  getExcuse(type: string) {
     if (this.loading) {
       return; // Prevent multiple requests
     }

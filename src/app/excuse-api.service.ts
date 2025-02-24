@@ -10,7 +10,7 @@ export class ExcuseApiService {
 
   constructor(private http: HttpClient) { }
 
-  getExcuse(type: 'work' | 'late' | 'help' | 'busy'): Observable<any> {
+  getExcuse(type: string): Observable<any> {
     return this.http.get<string>(`${environment.apiUrl}/${type}-excuse`);
   }
 }

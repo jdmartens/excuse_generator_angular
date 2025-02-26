@@ -41,3 +41,8 @@ minikube service excuse-generator-ng-service
 ```
 This will open the service in your default web browser.
 
+or port-forward and access it locally on localhost:8080
+you can change port 8080 to any unused port
+```bash
+ kubectl port-forward service/excuse-generator-ng-service 8080:80
+```
